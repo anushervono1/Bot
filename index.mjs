@@ -63598,7 +63598,7 @@ bot.command("gentoken", async (ctx) => {
   const token = `KRT-${rand(8)}-${rand(6)}`;
   const { error } = await supabase.from("purchases").insert({ token, is_active: true });
   if (error) return ctx.reply("\u274C \u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u0438 \u0442\u043E\u043A\u0435\u043D\u0430: " + error.message);
-  ctx.reply(`\u{1F511} \u041D\u043E\u0432\u044B\u0439 \u0442\u043E\u043A\u0435\u043D \u0441\u043E\u0437\u0434\u0430\u043D:\n\n`${token}`\n\n\u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439 \u0438 \u043E\u0442\u043F\u0440\u0430\u0432\u044C \u043F\u043E\u043A\u0443\u043F\u0430\u0442\u0435\u043B\u044E.`, { parse_mode: "Markdown" });
+  ctx.reply("\u{1F511} \u041D\u043E\u0432\u044B\u0439 \u0442\u043E\u043A\u0435\u043D \u0441\u043E\u0437\u0434\u0430\u043D:\n\n" + token + "\n\n\u0421\u043A\u043E\u043F\u0438\u0440\u0443\u0439 \u0438 \u043E\u0442\u043F\u0440\u0430\u0432\u044C \u043F\u043E\u043A\u0443\u043F\u0430\u0442\u0435\u043B\u044E.");
 });
 bot.on("text", async (ctx) => {
   if (ctx.from.id === OWNER_ID) return;
